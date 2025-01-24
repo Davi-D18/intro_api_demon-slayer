@@ -14,7 +14,7 @@ export function App() {
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 8) + 1;
-    axios.get(`https://www.demonslayer-api.com/api/v1/characters?limit=6&page=${randomNumber}`)
+    axios.get(`https://back-intro-api.vercel.app/api/characters?limit=6&page=${randomNumber}`)
       .then(response => {
         setCharacters(response.data);
 

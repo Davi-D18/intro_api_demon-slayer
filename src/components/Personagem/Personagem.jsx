@@ -10,7 +10,7 @@ export function Personagem({ id, onClose }) {
   useEffect(() => {
     if (!id) return;
 
-    axios.get(`https://www.demonslayer-api.com/api/v1/characters?id=${id}`)
+    axios.get(`https://back-intro-api.vercel.app/api/characters?id=${id}`)
       .then(response => {
         const data = response.data.content[0]; 
         setCharacter(data);
@@ -62,7 +62,11 @@ export function Personagem({ id, onClose }) {
 
             {/* Estilos de Combate */}
             <section className={S.combat_styles}>
-              <h3>Estilos de Combate</h3>
+              {character.combat_style.length > 1 ? (
+                <h3>Estilos de Combate</h3>
+              ) : (
+                <h3>Estilo de Combate</h3>
+              )}
               <div className={S.styles_container}>
                 {character.combat_style.map((style) => (
                   <div key={style.id} className={S.style_card}>
@@ -70,6 +74,7 @@ export function Personagem({ id, onClose }) {
                     <p>{style.description}</p>
                   </div>
                 ))}
+                {character.combat_style.length === 0 && <p>Desconhecido</p>}
               </div>
             </section>
           </>
