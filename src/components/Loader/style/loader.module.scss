@@ -1,0 +1,63 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flame {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 15px rgba(255, 69, 0, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 69, 0, 1), 0 0 30px rgba(255, 165, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 15px rgba(255, 69, 0, 0.9);
+  }
+}
+
+.loading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 94vw;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(255, 69, 0, 0.8);
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading_container p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ff4500;
+  font-family: "Rubik", serif;
+  animation: glowText 1.5s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 10px rgba(255, 69, 0, 0.9);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 165, 0, 1), 0 0 20px rgba(255, 165, 0, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 69, 0, 0.8), 0 0 10px rgba(255, 69, 0, 0.9);
+  }
+}
