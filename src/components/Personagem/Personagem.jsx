@@ -10,7 +10,7 @@ export function Personagem({ id, onClose }) {
   useEffect(() => {
     if (!id) return;
 
-    axios.get(`https://thingproxy.freeboard.io/fetch/https://www.demonslayer-api.com/api/v1/characters?id=${id}`)
+    axios.get(`https://www.demonslayer-api.com/api/v1/characters?id=${id}`)
       .then(response => {
         const data = response.data.content[0]; 
         setCharacter(data);

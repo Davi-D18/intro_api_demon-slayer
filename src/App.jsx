@@ -10,9 +10,11 @@ export function App() {
   const [error, setError] = useState("");
   const [detalhes, setDetalhes] = useState({ id: null, exibir: false });
 
+  // https://thingproxy.freeboard.io/fetch/
+
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 8) + 1;
-    axios.get(`https://thingproxy.freeboard.io/fetch/https://www.demonslayer-api.com/api/v1/characters?limit=6&page=${randomNumber}`)
+    axios.get(`https://www.demonslayer-api.com/api/v1/characters?limit=6&page=${randomNumber}`)
       .then(response => {
         setCharacters(response.data);
 
